@@ -62,7 +62,6 @@ void horizontal(){
         }
     }
 }
-
 main(){
-   vertical(); 
+//    vertical(); 
 }
