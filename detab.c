@@ -24,11 +24,48 @@ int detab(char s[], int len){
     }
     printf("%s",s); 
 }
-
+#define TABSTOP 8
 int main(){
-    int len; 
-    char line[MAXLINE]; 
-    while(len = getline1(line,MAXLINE)>0)
-        detab(line,len); 
+    char s1[MAXLINE]={"\t.\n"}; 
+    char s2[MAXLINE]={".\t,\n"}; 
+   char s3[MAXLINE]={"..\t,\n"};
+
+    int counter,ns_counter,numberOfSpaceToPrint;
+    char c;  
+    char ns[MAXLINE]; 
+    counter=ns_counter=numberOfSpaceToPrint=0; 
+
+    // while((c=s3[counter])!='\n'){
+    //     printf("%c\n",s3[counter]); 
+    //     ++counter; 
+    // }
+
+
+    while((c=s3[counter])!='\n'){
+        if(c=='\t'){
+            //first we must know how far away from tabstop? 
+            numberOfSpaceToPrint = (TABSTOP-counter)%TABSTOP; //how much remaining out of tabstop given my current distance?
+            // printf("%d\n",numberOfSpaceToPrint);
+            // printf("This a tab! \n");
+            ns_counter=counter; 
+            while(numberOfSpaceToPrint!=0){
+                ns[ns_counter] = ' '; 
+                
+                --numberOfSpaceToPrint; 
+                ++ns_counter;
+            }
+        }else{
+            // ns_counter = counter++; 
+            // putchar(c); 
+            ns[ns_counter] = c; 
+            ++ns_counter;
+        }
+        ++counter; 
+    }
+    
+    ns[ns_counter]='\0';
+    printf("%s\n", ns); 
+
     return 0; 
+
 }
