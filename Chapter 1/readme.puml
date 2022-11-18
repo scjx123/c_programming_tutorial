@@ -1,0 +1,10 @@
+@startuml
+fpgaconsumerinit->fpgaconsumerinit
+note left
+gLaserPort - GPIO
+gFpga - SSP 
+gFpga.chipselect - GPIO
+end note 
+
+startupFSM -> runlvlmgr -> 
+@enduml

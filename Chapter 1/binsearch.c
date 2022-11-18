@@ -1,8 +1,9 @@
 #include "stdio.h"
-
+#include <time.h>
 #define VECTOR_SIZE 7
 
 int binsearch(int* pV, int n){
+        clock_t time_taken;
     int start,end,mid; 
     //update variable
     start = 0;
