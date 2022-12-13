@@ -2,6 +2,8 @@
     "files.associations": {
         "limits.h": "c",
         "stdio.h": "c",
-        "float.h": "c"
+        "float.h": "c",
+        "4-01": "c",
+        "cmath": "c"
     }
 }
