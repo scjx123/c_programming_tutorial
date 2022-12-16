@@ -158,3 +158,12 @@ main(void){
 therefore parenthesis matters!
 
 
+# Chapter 5 - Pointers and Arrays
+
+First, you call malloc for allocation of allocbuf. 
+Next, you ask alloc(n) to give you more space in allocbuf, if (allocbuf+ ALLOCSIZE - allocp >= n) then it means we have enough space to give you your new allocation, and alloc(n) will update the allocp to the beginning of next free space, while returning you allocp - n, which is the beginning of your current new space that you requested for. 
+
+Then, if you want to free up space in your allocbuf, afree(p) checks if (p>= allocbuf&& < allocbuf + ALLOCSIZE), if p is within range of allocbuf, then yes, we can free up space by resetting the pointer allocp to your pointer p.
+
+## Things to note for pointer arithmetic 
+The valid pointer operations are assignment of pointers of the same type, adding or subtracting a pointer and an integer, subtracting por comparing two pointers to members of the **same** array, and assigning or comparing to zero. All other pointer arithmetic is illegal. It is not legal to add two pointers, or to multiple or divide or shift or mask them or to add float or double to them, or even (except for void*) to assign a pointer of one type to another pointer of another type with a cast.  

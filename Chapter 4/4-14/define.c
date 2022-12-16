@@ -14,7 +14,7 @@ int getchar(void){/*...*/}
 #define dprint(expr) printf(#expr " = %g\n",expr) 
 
 #define paster(n) printf_s("token" #n "= %d\n",token##n)
-int token9=10;
+int  token9=10;
 
 #define swap(t,x,y) {t _z;\
 _z = x;\
