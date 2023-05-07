@@ -21,6 +21,6 @@ int main(){
     int i; 
     printf("%d\n",arr[-2]);
     printf("%d\n",strlen("fuck"));
-   
+    
     return 0;
 }
